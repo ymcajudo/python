@@ -19,6 +19,7 @@ except:
 
 while True:
     socServer = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socServer.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)     #socket.close() 한 port number를 즉시 재사용시
     socServer.bind((HOST, PORT))
     socServer.listen()
     conn, addr = socServer.accept()
