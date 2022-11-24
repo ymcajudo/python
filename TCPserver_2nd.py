@@ -22,7 +22,7 @@ while True:
     socServer.bind((HOST, PORT))
     socServer.listen()
     conn, addr = socServer.accept()
-    print(f"Connected by {addr}")
+    print(f"Connected by {addr}"+" A cleint is connected")
     
     while True:
             data = conn.recv(1024)          #TCP client에서 보낸 data를 byte()로 수신, 1024는 버퍼사이즈
@@ -37,7 +37,8 @@ while True:
                 break
             """
             conn.sendall(bytes(response,'utf-8'))       #Transform string to bytes, https://codechacha.com/ko/python-convert-string-to-bytes/
-    
+            print(f"Connected by {addr}"+" and the received is " + "\""+str(data,'utf-8')+"\"")
+
     conn.close()
 
     """
