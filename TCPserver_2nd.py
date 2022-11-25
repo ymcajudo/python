@@ -38,7 +38,7 @@ while True:
                 break
             """
             conn.sendall(bytes(response,'utf-8'))       #Transform string to bytes, https://codechacha.com/ko/python-convert-string-to-bytes/
-            print(f"Connected by {addr}"+" and the received is " + "\""+str(data,'utf-8')+"\"")
+            print(f"Connected by {addr}"+" and the received message is " + "\""+str(data,'utf-8')+"\"")
 
     conn.close()
 
